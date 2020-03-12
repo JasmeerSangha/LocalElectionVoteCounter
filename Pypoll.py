@@ -6,11 +6,13 @@ file_to_load = os.path.join("Resources/election_results.csv")
 # Assign a variable to save the file to a path.
 file_to_save = os.path.join("analysis", "election_analysis.txt")
 
+#Initializing variables
 total_votes=0
 candidateoptions=[]
 candidatevotes={}
 winning_votes=0
 winning_cand=""
+
 # Open the election results and read the file.
 with open(file_to_load) as election_data:
     file_reader = csv.reader(election_data)
@@ -18,7 +20,7 @@ with open(file_to_load) as election_data:
     # Read the header row.
     headers = next(file_reader)
 
-    # Print each row in the CSV file.
+    # Find number of votes per candidate
     for row in file_reader:
         candidatename=row[2]
         if candidatename not in candidateoptions:
@@ -28,6 +30,7 @@ with open(file_to_load) as election_data:
         candidatevotes[candidatename]+=1
         total_votes+=1
 
+#Find the winner
 for name in candidateoptions:
     if candidatevotes[name] > winning_votes:
         winning_cand=name
