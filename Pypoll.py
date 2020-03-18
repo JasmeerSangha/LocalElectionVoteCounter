@@ -19,7 +19,7 @@ winning_percent=0
 # Open the election results and read the file.
 with open(file_to_load) as election_data:
     file_reader = csv.reader(election_data)
-    
+    print(election_data)
     # Read the header row.
     headers = next(file_reader)
     print(headers)
