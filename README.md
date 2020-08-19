@@ -1,4 +1,4 @@
-# election-analysis
+# Local Election Analysis
 ## Overview
 Python analysis of local election results.
 ## Resources
